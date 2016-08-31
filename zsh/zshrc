@@ -1,0 +1,68 @@
+#
+# Executes commands at the start of an interactive session.
+#
+# Authors:
+#   Sorin Ionescu <sorin.ionescu@gmail.com>
+# Source Prezto.
+export DOTFILES="$HOME/dotfiles"
+# export ZSH="$HOME/dotfiles/zsh"
+source $HOME/.zprezto/init.zsh
+
+# Customize to your needs...
+autoload -Uz compinit promptinit
+promptinit
+compinit
+prompt agnoster
+# prompt pure
+
+#######################
+# environment settings
+#######################
+
+setopt inc_append_history
+# Reloads the history whenever you use it
+setopt share_history
+
+export EDITOR="vim"
+# export VAGRANT_DEFAULT_PROVIDER="vmware_fusion"
+export TERM="xterm-256color"
+ulimit -n 4096
+
+alias vim="nvim"
+alias up="cd .."
+alias gst="git status"
+alias gd="git diff"
+alias gdt="git difftool"
+alias gdc="git diff --cached"
+alias gdtc="git difftool --cached"
+alias gco="git checkout"
+alias gp="git push"
+alias gf="git fetch"
+
+alias ll="ls -lah"
+
+alias cl="clear"
+
+alias sf="standard-format -w"
+alias pbc="pbcopy"
+
+# Vagrant
+
+# By default, zsh considers many characters part of a word (e.g., _ and -).
+# Narrow that down to allow easier skipping through words via M-f and M-b.
+export WORDCHARS='*?[]~&;!$%^<>'
+
+# first: brew install source-highlight
+export LESSOPEN="| /usr/local/bin/src-hilite-lesspipe.sh %s"
+export LESS=' -R '
+
+source ${DOTFILES}/antibody/antibody/antibody.zsh
+antibody bundle zsh-users/zsh-completions
+antibody bundle zsh-users/zsh-syntax-highlighting
+source ~/.antibody/zsh-users-zsh-history-substring-search/zsh-history-substring-search.zsh
+
+
+# ~/bin/nave use 6
+unsetopt beep                   # no bell on error
+unsetopt list_beep              # no bell on ambiguous completion
+#

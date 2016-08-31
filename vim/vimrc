@@ -1,0 +1,29 @@
+set shell=/bin/sh
+" set VIM_DIR for your environment
+let VIM_DIR=expand("$HOME/dotfiles/vim")
+execute "source" VIM_DIR . "/functions.vim"
+execute "source" VIM_DIR . "/plugins.vim"
+execute "source" VIM_DIR . "/plugin_settings.vim"
+execute "source" VIM_DIR . "/general.vim"
+execute "source" VIM_DIR . "/mappings.vim"
+execute "source" VIM_DIR . "/colors.vim"
+execute "source" VIM_DIR . "/filetypes.vim"
+
+let autoreadargs={'autoread':1}
+silent execute WatchForChanges("*",autoreadargs)
+
+" Make changes to read-only system files with the :w!! command
+cmap w!! %!sudo tee > /dev/null &
+
+" autocmd BufWritePre * StripWhiteSpace
+" command! -range=% StripWhiteSpaces :silent call <SID>StripWhiteSpaces()
+" autocmd FileType c,cpp,js,javascript,java,php,ruby,python autocmd BufWritePre <buffer> :call <SID>Preserve("%s/\\s\\+$//e")<cr>
+
+
+" Return to last edit position when opening files (You want this!)
+autocmd BufReadPost *
+      \ if line("'\"") > 0 && line("'\"") <= line("$") |
+      \   exe "normal! g`\"" |
+      \ endif
+" Remember info about open buffers on close
+set viminfo^=%

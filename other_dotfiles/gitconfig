@@ -1,0 +1,42 @@
+[user]
+	name = Noah Isaacson
+	email = noah@nisaacson.com
+
+[push]
+	default = simple
+
+[core]
+	excludesfile = /Users/noah/.gitignore_global
+	editor = nvim
+
+[merge]
+	ff = no
+
+[color]
+	ui = true
+
+# [pull]
+# 	rebase = true
+
+[push]
+	simple = true
+
+[mergetool "Kaleidoscope"]
+	cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
+	trustexitcode = true
+[merge]
+	tool = Kaleidoscope
+[difftool "Kaleidoscope"]
+	cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
+[difftool]
+	prompt = false
+[mergetool]
+	prompt = false
+[diff]
+	tool = Kaleidoscope
+[url "git@github.com:"]
+	insteadOf = https://github.com/
+[url "git@stash.itriagehealth.com:"]
+	insteadOf = https://stash.itriagehealth.com/
+[branch]
+	autosetuprebase = always
