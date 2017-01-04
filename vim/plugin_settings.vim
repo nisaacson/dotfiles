@@ -1,7 +1,7 @@
 """""""""""""""""
 " Deoplete settings
 """""""""""""""""
-" let g:deoplete#enable_at_startup = 1
+let g:deoplete#enable_at_startup = 1
 "
 """""""""""""""""
 " NERDTRee settings
@@ -24,7 +24,9 @@ let NERDTreeIgnore=['\.DS_Store$']
 let g:neomake_javascript_enabled_makers = ['standard']
 " let g:neomake_lua_enabled_makers = ['luacheck']
 let g:neomake_jsx_enabled_makers = ['standard']
+let g:neomake_open_list = 2
 autocmd! BufWritePost * Neomake
+
 "
 " let g:airline_powerline_fonts = 1
 "
@@ -63,6 +65,8 @@ let g:ctrlp_cmd = 'CtrlPBuffer'
 "     return 0
 "   endif
 " endfun
+
+let g:webdevicons_enable_ctrlp = 1
 "
 " " Gitgutter
 " let g:gitgutter_realtime = 0
@@ -90,3 +94,4 @@ let g:ctrlp_cmd = 'CtrlPBuffer'
 "
 " " vim-better-whitespace
 let strip_whitespace_on_save = 1
+

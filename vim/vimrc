@@ -1,10 +1,10 @@
 set shell=/bin/sh
 " set VIM_DIR for your environment
 let VIM_DIR=expand("$HOME/dotfiles/vim")
+execute "source" VIM_DIR . "/general.vim"
 execute "source" VIM_DIR . "/functions.vim"
 execute "source" VIM_DIR . "/plugins.vim"
 execute "source" VIM_DIR . "/plugin_settings.vim"
-execute "source" VIM_DIR . "/general.vim"
 execute "source" VIM_DIR . "/mappings.vim"
 execute "source" VIM_DIR . "/colors.vim"
 execute "source" VIM_DIR . "/filetypes.vim"

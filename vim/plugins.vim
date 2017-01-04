@@ -3,7 +3,7 @@ function! DoRemote(arg)
 endfunction
 
 call plug#begin('~/.vim/plugged')
-" Plug 'goatslacker/mango.vim'
+Plug 'goatslacker/mango.vim'
 Plug 'tomtom/tcomment_vim'
 Plug 'scrooloose/nerdtree'
 Plug 'bling/vim-airline'
@@ -19,11 +19,18 @@ Plug 'ntpeters/vim-better-whitespace'
 Plug 'sheerun/vim-polyglot'
 Plug 'aklt/plantuml-syntax'
 Plug 'Shougo/deoplete.nvim', { 'do': function('DoRemote') }
+Plug 'tpope/vim-unimpaired'
 " Plug 'carlitux/deoplete-ternjs'
 " Plug 'ternjs/tern_for_vim'
 " Plug 'sgur/ctrlp-extensions.vim'
 " " Plug 'airblade/vim-gitgutter'
-Plug 'kien/ctrlp.vim'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'dhruvasagar/vim-table-mode'
+Plug 'craigemery/vim-autotag'
+Plug 'carlitux/deoplete-ternjs', { 'do': 'yarn global add tern' }
+Plug 'ternjs/tern_for_vim'
+
+Plug 'ryanoasis/vim-devicons'
 
 call plug#end()
 

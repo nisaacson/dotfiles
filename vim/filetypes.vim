@@ -16,3 +16,5 @@ au BufNewFile,BufRead Podfile,*.podspec      set filetype=ruby
 
 " associate Utopiafile with json filetype syntax
 autocmd BufNewFile,BufReadPost Utopiafile set filetype=json
+
+autocmd BufNewFile,BufReadPost .babelrc set filetype=json

@@ -65,4 +65,5 @@ source ~/.antibody/zsh-users-zsh-history-substring-search/zsh-history-substring-
 # ~/bin/nave use 6
 unsetopt beep                   # no bell on error
 unsetopt list_beep              # no bell on ambiguous completion
-#
+IGNOREEOF=10
+# source $HOME/.nvm/nvm.sh

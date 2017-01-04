@@ -6,7 +6,7 @@
 	default = simple
 
 [core]
-	excludesfile = /Users/noah/.gitignore_global
+	excludesfile = /Users/A629443/gitignore_global
 	editor = nvim
 
 [merge]
@@ -40,3 +40,12 @@
 	insteadOf = https://stash.itriagehealth.com/
 [branch]
 	autosetuprebase = always
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Users/A629443/Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[credential]
+	helper = !aws --profile soke codecommit credential-helper $@
+	UseHttpPath = true

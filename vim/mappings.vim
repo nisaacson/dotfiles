@@ -104,3 +104,21 @@ if has('nvim')
   nmap <BS> <C-W>h
   tnoremap <Esc> <C-\><C-n>
 endif
+
+" Deoplete mappings
+" Recommended key-mappings.
+" <CR>: close popup and save indent.
+inoremap <expr><CR> pumvisible()? "\<C-y>" : "\<CR>"
+
+" use tab to forward cycle
+inoremap <silent><expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
+" use tab to backward cycle
+inoremap <silent><expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
+
+nnoremap ]l :try<bar>lnext<bar>catch /^Vim\%((\a\+)\)\=:E\%(553\<bar>42\):/<bar>lfirst<bar>endtry<cr>
+
+
+" show color under cursor
+map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
+\ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
+\ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
