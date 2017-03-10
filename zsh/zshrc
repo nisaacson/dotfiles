@@ -12,8 +12,8 @@ source $HOME/.zprezto/init.zsh
 autoload -Uz compinit promptinit
 promptinit
 compinit
-prompt agnoster
-# prompt pure
+#prompt agnoster
+prompt pure
 
 #######################
 # environment settings
@@ -23,7 +23,7 @@ setopt inc_append_history
 # Reloads the history whenever you use it
 setopt share_history
 
-export EDITOR="vim"
+export EDITOR="nvim"
 # export VAGRANT_DEFAULT_PROVIDER="vmware_fusion"
 export TERM="xterm-256color"
 ulimit -n 4096
@@ -59,11 +59,13 @@ export LESS=' -R '
 source ${DOTFILES}/antibody/antibody/antibody.zsh
 antibody bundle zsh-users/zsh-completions
 antibody bundle zsh-users/zsh-syntax-highlighting
+
 source ~/.antibody/zsh-users-zsh-history-substring-search/zsh-history-substring-search.zsh
 
 
-# ~/bin/nave use 6
+bindkey -e
 unsetopt beep                   # no bell on error
 unsetopt list_beep              # no bell on ambiguous completion
 IGNOREEOF=10
+set -o ignoreeof # disable exit with ctrl-d
 # source $HOME/.nvm/nvm.sh

@@ -29,4 +29,8 @@ brew update
 brew upgrade reattach-to-user-namespace jq tmux
 npm install -g esformatter bunyan tern standard standard-format pure-prompt
 
+
+# Fix ctrl-h issue, see https://github.com/christoomey/vim-tmux-navigator/issues/71
+infocmp $TERM | sed 's/kbs=^[hH]/kbs=\\177/' > $TERM.ti
+tic $TERM.ti
 exit 1
