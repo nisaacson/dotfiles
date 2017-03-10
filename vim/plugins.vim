@@ -31,6 +31,13 @@ Plug 'carlitux/deoplete-ternjs', { 'do': 'yarn global add tern' }
 Plug 'ternjs/tern_for_vim'
 
 Plug 'ryanoasis/vim-devicons'
+Plug 'wellle/targets.vim'
+Plug 'mileszs/ack.vim'
+Plug 'kana/vim-textobj-user'
+Plug 'kana/vim-textobj-line'
+Plug 'kana/vim-textobj-entire'
+Plug 'lucapette/vim-textobj-underscore'
+Plug 'dodie/vim-disapprove-deep-indentation'
 
 call plug#end()
 

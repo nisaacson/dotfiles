@@ -17,6 +17,7 @@ ln -s ~/dotfiles/other_dotfiles/eslintrc ~/.eslintrc
  ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
+
 # vim +PluginInstall +qall
 
 ~/dotfiles/vim/bundle/YouCompleteMe/install.sh
@@ -29,8 +30,8 @@ brew update
 brew upgrade reattach-to-user-namespace jq tmux
 npm install -g esformatter bunyan tern standard standard-format pure-prompt
 
-
 # Fix ctrl-h issue, see https://github.com/christoomey/vim-tmux-navigator/issues/71
 infocmp $TERM | sed 's/kbs=^[hH]/kbs=\\177/' > $TERM.ti
 tic $TERM.ti
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 exit 1

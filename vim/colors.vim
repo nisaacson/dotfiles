@@ -27,7 +27,7 @@ set background=dark
 highlight VertSplit    ctermbg=232 ctermfg=235
 " highlight StatusLineNC ctermbg=238 ctermfg=0
 " highlight StatusLine   ctermbg=240 ctermfg=12
-" highlight MatchParen cterm=bold ctermfg=cyan ctermbg=black
+highlight MatchParen ctermfg=208  ctermbg=235 cterm=bold
 
 " Show syntastic warnings column
 " highlight SpellCap term=undercurl cterm=undercurl ctermfg=88 ctermbg=232
