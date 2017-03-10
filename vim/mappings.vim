@@ -49,7 +49,7 @@ inoremap <CR> <CR>x<BS>
 nnoremap <silent> <leader>e :call JSFormat()<cr>
 nnoremap <C-o> <leader>e :call JSFormat()<cr>
 
-nnoremap Q <Nop>  " Disable defualt ex mode shortcut
+nnoremap Q <Nop>  " Disable default ex mode shortcut
 
 " From http://sheerun.net/2014/03/21/how-to-boost-your-vim-productivity/
 vmap v <Plug>(expand_region_expand)

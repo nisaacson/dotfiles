@@ -46,9 +46,6 @@ set clipboard=unnamed
 
 "set wildignore+=*/bundle,*/plugin,*/node_modules/,*/tmp/*,*.so,*.swp,*.zip,*.DS_Store     " Speed up Ctrl-P on MacOSX/Linux
 
-" persistent undo
-set undofile
-set undodir=~/.vimundo
 " Store temporary files in a central spot
 set backup
 set backupdir=~/.backups,~/.tmp,~/tmp,/var/tmp,/tmp " where to put backup files
@@ -56,6 +53,9 @@ set directory=~/.backups,~/.tmp,~/tmp,/var/tmp,/tmp " where to put swap files
 set backupskip=/tmp/*,/private/tmp/* "do not backup when editing files in these directories
 set writebackup "create a backup when saving a file, useful for when vim crashes trying to save a file
 
+" persistent undo
+set undofile
+set undodir=~/.vimundo
 if has('persistent_undo')
     set undofile                  " Save undo history to file
     set undodir=~/.vim/tmp/undo// " undo files in folder

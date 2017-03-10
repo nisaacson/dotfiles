@@ -21,8 +21,8 @@ let NERDTreeIgnore=['\.DS_Store$']
 " "     \ 'args': ['--verbose'],
 " "     \ 'errorformat': '  %f:%l:%c: %m'
 " "     \ }
-let g:neomake_javascript_enabled_makers = ['standard']
 " let g:neomake_lua_enabled_makers = ['luacheck']
+let g:neomake_javascript_enabled_makers = ['standard']
 let g:neomake_jsx_enabled_makers = ['standard']
 let g:neomake_open_list = 2
 autocmd! BufWritePost * Neomake
@@ -95,3 +95,14 @@ let g:webdevicons_enable_ctrlp = 1
 " " vim-better-whitespace
 let strip_whitespace_on_save = 1
 
+let g:hardtime_default_on = 1
+
+let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols = {} " needed
+let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['jsx'] = 'ƛ'
+
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
+
+let g:LookOfDisapprovalTabTreshold=5
+let g:LookOfDisapprovalSpaceTreshold=(&tabstop*5)

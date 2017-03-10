@@ -17,6 +17,7 @@ ln -s ~/dotfiles/other_dotfiles/eslintrc ~/.eslintrc
  ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
+
 # vim +PluginInstall +qall
 
 ~/dotfiles/vim/bundle/YouCompleteMe/install.sh
@@ -29,4 +30,5 @@ brew update
 brew upgrade reattach-to-user-namespace jq tmux
 npm install -g esformatter bunyan tern standard standard-format pure-prompt
 
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 exit 1
