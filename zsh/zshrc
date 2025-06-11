@@ -56,6 +56,32 @@ export WORDCHARS='*?[]~&;!$%^<>'
 export LESSOPEN="| /usr/local/bin/src-hilite-lesspipe.sh %s"
 export LESS=' -R '
 
+
+# Auto-attach to tmux session
+if [[ -z "$TMUX" ]] && [[ -n "$TERM_PROGRAM" ]] && [[ "$TERM_PROGRAM" == "iTerm.app" ]]; then
+    # Check if a tmux session exists
+    if tmux has-session -t main 2>/dev/null; then
+        exec tmux attach-session -t main
+    else
+        exec tmux new-session -s main
+    fi
+fi
+
+# Override tmux command to use main session
+tmux() {
+    if [[ $# -eq 0 ]]; then
+        # No arguments - attach to main or create it
+        if command tmux has-session -t main 2>/dev/null; then
+            command tmux attach-session -t main
+        else
+            command tmux new-session -s main
+        fi
+    else
+        # Pass through other tmux commands
+        command tmux "$@"
+    fi
+}
+
 source ${DOTFILES}/antibody/antibody/antibody.zsh
 antibody bundle zsh-users/zsh-completions
 antibody bundle zsh-users/zsh-syntax-highlighting
@@ -68,4 +94,3 @@ unsetopt beep                   # no bell on error
 unsetopt list_beep              # no bell on ambiguous completion
 IGNOREEOF=10
 set -o ignoreeof # disable exit with ctrl-d
-# source $HOME/.nvm/nvm.sh
